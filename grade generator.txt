@@ -1,0 +1,24 @@
+//Program to display the grade of the student by entering marks.
+#include<stdio.h>
+int main(){
+    int mark;
+    printf("Enter Mark: ");
+    scanf("%d",&mark);
+    
+    if (mark<30) {
+        printf("Grade:C\n");
+    }
+    else if (30<=mark,mark<70){
+        printf("Grade:B\n");
+    }
+    else if (70<=mark,mark<90){
+        printf("Grade:A\n");
+    }
+    else if(90<=mark,mark<=100) {
+        printf("Grade:A+\n");
+    }
+    else{
+        printf("NA\n");
+    }
+return 0;
+}

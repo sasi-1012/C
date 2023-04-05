@@ -1,0 +1,17 @@
+//Program to check if a student passed or failed.
+int main(){
+    int mark;
+    printf("Enter Mark: ");
+    scanf("%d",&mark);
+    
+    if(mark>30,mark<=100) {
+        printf("PASS\n");
+    }
+    else if(mark<=30){
+        printf("FAIL\n");
+    }
+    else{
+        printf("NA\n");
+    }
+return 0;
+}

@@ -1,0 +1,20 @@
+//Program to check if number is positive or negative.If positive also tell whether odd or even.
+int main(){
+    int number;
+    printf("Enter any number: ");
+    scanf("%d",&number);
+    
+    if(number>=0) {
+        printf("positive \n");
+        if (number%2==0){
+            printf("even\n");
+        }
+        else{
+            printf("odd\n");
+        }
+    }
+    else{
+        printf("negative\n");
+    }
+return 0;
+}

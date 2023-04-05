@@ -1,0 +1,18 @@
+//Program to find if a character entered by user is upper case or not.
+#include<stdio.h>
+int main(){
+    char letter;
+    printf("Enter Letter: ");
+    scanf("%c",&letter);
+    
+    if (letter<='Z'&& letter>='A') {
+        printf("Upper Case\n");
+    }
+    else if (letter<='z'&&letter>='a'){
+        printf("Lower Case\n");
+    }
+    else{
+        printf("NA\n");
+    }
+return 0;
+}

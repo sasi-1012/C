@@ -1,0 +1,8 @@
+//Program to print the alphabet
+#include<stdio.h>
+int main(){
+    for (char ch='a'; ch<='z'; ch++){
+        printf("%c \n",ch);
+    }
+return 0;
+}
