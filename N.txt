@@ -1,0 +1,13 @@
+// Program to print the first n natural numbers
+#include <stdio.h> 
+int main() { 
+	int n;//initialising variable for the number being entered
+	printf("enter number: "); //receiving input from user
+	scanf("%d",&n); //storing the received input in variable n.
+	int sum=0;//initialising variable sum
+	for(int i=1; i<=n; i++){
+	sum=sum+1; //sum+=1
+}
+printf("sum is %d\n", sum); //output
+return 0;
+}

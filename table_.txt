@@ -1,0 +1,11 @@
+// Program to print the table of the number
+#include <stdio.h>
+int main() {
+for(int i=5; i<=50; i++){ 
+	if(1%2==0){ //skip even numbers
+	continue;
+	}
+printf("%d\n",i);
+}
+return 0; 
+}
