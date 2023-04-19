@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main() {
+	char name[] = "Jacob Hermes";
+	printf("%c", *name);
+	printf("%c", *(name+2));
+	printf("%c", *(name+8));
+	char *namePtr;
+	namePtr = name;
+	printf("%c", *namePtr); 
+	printf("%c", *(namePtr+2));
+	printf("%c", *(namePtr+5)); 
+return 0;
+}
