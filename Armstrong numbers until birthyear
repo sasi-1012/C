@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <math.h>
+
+int isArmstrong(int num) {
+    int originalNum = num;
+    int digits = 0;
+    int sum = 0;
+
+    // Count the number of digits
+    while (num != 0) {
+        num /= 10;
+        digits++;
+    }
+
+    // Calculate the sum of digits raised to the power of the total number of digits
+    num = originalNum;
+    while (num != 0) {
+        int remainder = num % 10;
+        sum += pow(remainder, digits);
+        num /= 10;
+    }
+
+    // Check if the number is an Armstrong number
+    if (sum == originalNum) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+int main() {
+    int birthYear;
+
+    printf("Enter Ravi Varma's year of birth: ");
+    scanf("%d", &birthYear);
+
+    printf("Armstrong numbers up to %d:\n", birthYear);
+    for (int i = 1; i <= birthYear && i < 10000; i++) {
+        if (isArmstrong(i)) {
+            printf("%d\n", i);
+        }
+    }
+
+    return 0;
+}
