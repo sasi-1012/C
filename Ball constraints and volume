@@ -1,0 +1,59 @@
+/*N balls are to be transported through a tunnel. Each ball has 3 parameters namely: color. diameter (cm), and weight (g). One ball can be sent into the tunnel at a time. Store the three parameters for all the balls using an appropriate data structure in C. and Display whether the ball meets the required constraints or not in the main function. Use a function with a default parameter specified in the formula.
+Constraints: 
+I. If the ball is red, and the diameter is <41 cm, the ball can pass through the tunnel.
+II. If the ball is black, and the weight is <3Kg, the ball can pass through the tunnel.
+III. If the diameter of ball is having a diameter <100cm and weight<100g, the ball can pass through the tunnel.
+Pass the data obtained from the user to a function named check(). The result of the check() is to be passed to another function named findVolume(). Use pointers concept to avoid returning the volume from the function. Display the result in main().
+Formula for finding the volume of the sphere: (4/3) π r 
+[Note: If the constraints are satisfied, the volume is to be calculated, If not, display "Cannot be transported through the tunnel"]*/
+
+#include <stdio.h>
+
+#define PI 3.14159265359
+
+struct Ball {
+    char color[10];
+    float diameter;
+    float weight;
+};
+
+void check(struct Ball *ball) {
+    if (strcmp(ball->color, "red") == 0 && ball->diameter < 41) {
+        printf("Constraints satisfied. Calculating volume...\n");
+        float radius = ball->diameter / 2;
+        float volume = (4.0 / 3.0) * PI * radius * radius * radius;
+        findVolume(&volume);
+    } else if (strcmp(ball->color, "black") == 0 && ball->weight < 3000) {
+        printf("Constraints satisfied. Calculating volume...\n");
+        float radius = ball->diameter / 2;
+        float volume = (4.0 / 3.0) * PI * radius * radius * radius;
+        findVolume(&volume);
+    } else if (ball->diameter < 100 && ball->weight < 100) {
+        printf("Constraints satisfied. Calculating volume...\n");
+        float radius = ball->diameter / 2;
+        float volume = (4.0 / 3.0) * PI * radius * radius * radius;
+        findVolume(&volume);
+    } else {
+        printf("Cannot be transported through the tunnel.\n");
+    }
+}
+
+void findVolume(float *volume) {
+    printf("Volume of the ball: %.2f cubic cm\n", *volume);
+}
+
+int main() {
+    int numBalls;
+    printf("Enter the number of balls: ");
+    scanf("%d", &numBalls);
+
+    struct Ball balls[numBalls];
+
+    for (int i = 0; i < numBalls; i++) {
+        printf("Enter the color, diameter (cm), and weight (g) of ball %d:\n", i + 1);
+        scanf("%s %f %f", balls[i].color, &balls[i].diameter, &balls[i].weight);
+        check(&balls[i]);
+    }
+
+    return 0;
+}
