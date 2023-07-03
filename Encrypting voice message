@@ -1,0 +1,40 @@
+#include <stdio.h>
+int even_square_sum(int arr[], int size) {
+    int sum = 0;
+    for (int i = 1; i < size; i += 2) {
+        sum += arr[i] * arr[i];
+    }
+    return sum;
+}
+
+int odd_cube_sum(int arr[], int size) {
+    int sum = 0;
+    for (int i = 0; i < size; i += 2) {
+        sum += arr[i] * arr[i] * arr[i];
+    }
+    return sum;
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    
+    int even_sum = even_square_sum(arr, size);
+    int odd_sum = odd_cube_sum(arr, size);
+    
+    for (int i = 0; i < size; i += 2) {
+        arr[i] += odd_sum;
+    }
+    
+    for (int i = 1; i < size; i += 2) {
+        arr[i] += even_sum;
+    }
+    
+    printf("Encrypted Array: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    
+    return 0;
+}
